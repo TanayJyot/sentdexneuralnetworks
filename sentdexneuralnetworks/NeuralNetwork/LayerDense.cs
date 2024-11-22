@@ -7,7 +7,7 @@ public class LayerDense
 {
     private NDarray weights;
     private NDarray biases;
-    private NDarray output;
+    public NDarray output;
     private NDarray X = np.array(new[,]
     {
         { 1, 2, 3, 2.5}, 
@@ -23,9 +23,9 @@ public class LayerDense
         biases = np.zeros((1, n_neurons));
         // Gives us 1 array containing as many 0 placed arrays as there are neurons.
     }
-    void forward(NDarray inputs)
+    public void forward(NDarray inputs)
     {
-        this.output = np.dot(inputs, weights) + biases;
+        output = np.dot(inputs, weights) + biases;
     }
 
     public static void Main()
