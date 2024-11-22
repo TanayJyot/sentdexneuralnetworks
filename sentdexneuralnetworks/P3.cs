@@ -14,6 +14,12 @@ public class P3
     private double[] biases = { 2, 3, 0.5};
     private List<double> layerOutputs;
 
+    /// <summary>
+    /// What we do is that we have 4 neurons(inputs) mapping to 3 outputs.
+    /// We also have the weights of those inputs acting on those outputs and the bias for the three inputs.
+    /// The objective here is to multiply each of the three weights (representing the three neurons) to the inputs to
+    /// get the value for 3 nwueons and then take the biases of those neurons and add them to the values that we got.
+    /// </summary>
     public P3()
     {
         layerOutputs = [];
@@ -40,7 +46,7 @@ public class P3
         // ];
     }
 
-    public List<double> getOutput() => output;
+    // public List<double> getOutput() => output;
 
     static void Main()
     {
