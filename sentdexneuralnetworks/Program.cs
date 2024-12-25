@@ -6,6 +6,7 @@ using sentdexneuralnetworks.NeuralNetwork;
 using sentdexneuralnetworks.P4Files;
 using sentdexneuralnetworks.P5Files;
 using sentdexneuralnetworks.P6FIles;
+using sentdexneuralnetworks.P7Files;
 
 NDarray X = np.array(new[,]
 {
@@ -39,5 +40,19 @@ NDarray X = np.array(new[,]
 // activationReLu.forward(layer1.output);
 // Console.WriteLine(activationReLu.output);
 
-P6File1 p6File1 = new P6File1();
-Console.WriteLine(string.Join(", ", p6File1.getExpValues()));
+// P6File1 p6File1 = new P6File1();
+// Console.WriteLine(string.Join(", ", p6File1.getExpValues()));
+// CD cD = new CD();
+// (NDarray, NDarray) data = cD.CreateData(100, 3);
+// LayerDense dense1 = new LayerDense(2, 3);
+// ActivationReLU activationReLu = new ActivationReLU();
+// LayerDense dense2 = new LayerDense(3, 3);
+// ActivationSoftmax activationSoftmax = new ActivationSoftmax();
+// dense1.forward(data.Item1);
+// activationReLu.forward(dense1.output);
+//
+// dense2.forward(activationReLu.output);
+// activationSoftmax.forward(dense2.output);
+// Console.WriteLine(string.Join(", ", activationSoftmax.output));
+
+P7File1 p7File1 = new P7File1();

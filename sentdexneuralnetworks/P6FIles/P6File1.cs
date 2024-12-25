@@ -4,38 +4,42 @@ namespace sentdexneuralnetworks.P6FIles;
 
 public class P6File1
 {
-    private List<double> layerOutputs = new List<double> { 4.8, 1.21, 2.385 };
+    private NDarray layerOutputs = np.array(
+        new double[,] {
+            { 4.8, 1.21, 2.385 },
+            { 8.9, -1.81, 0.2 },
+            { 1.41, 1.051, 0.026}} );
     private double E = Math.E;
-    private List<double> expValues = new List<double>();
+    private NDarray expValues;
 
     public P6File1()
     {
         // List<double> expValues = new List<double>();
-
-        foreach (double output in layerOutputs)
-        {
-            expValues.Add(Math.Pow(E, output));
-        }
+        expValues = np.exp(layerOutputs);
+        // foreach (double output in layerOutputs)
+        // {
+        //     expValues.Add(Math.Pow(E, output));
+        // }
         
         normalization(expValues);
     }
 
-    private void normalization(List<double> expValues)
+    private void normalization(NDarray expValues)
     {
-        double normBase = expValues.Sum();
-        List<double> normValues = new List<double>();
+        NDarray normBase = expValues.sum();
+        NDarray normValues = expValues / np.sum(expValues, axis: 1, keepdims: true);
 
-        foreach (double value in expValues)
-        {
-            normValues.Add(value / normBase); 
-            // This will normalize all the values so that we can find the probability
-            
-        }
+        // foreach (double value in expValues)
+        // {
+        //     normValues.Add(value / normBase); 
+        //     // This will normalize all the values so that we can find the probability
+        //     
+        // }
         Console.WriteLine(string.Join(", ", normValues));
-        Console.WriteLine(normValues.Sum());
+        Console.WriteLine(normValues.sum());
     }
 
-    public List<double> getExpValues()
+    public NDarray getExpValues()
     {
         return expValues;
     }

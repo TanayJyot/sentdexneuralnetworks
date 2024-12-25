@@ -5,7 +5,7 @@ using Numpy;
 
 public class CD
 {
-    public static (NDarray, NDarray) CreateData(int points, int classes)
+    public (NDarray, NDarray) CreateData(int points, int classes)
     {
         // Set random seed for reproducibility
         np.random.seed(0);
@@ -37,19 +37,19 @@ public class CD
         return (X, y);
     }
 
-    public static void Main(string[] args)
-    {
-        int points = 100;  // Number of points per class
-        int classes = 3;   // Number of classes
-
-        // Generate dataset
-        var (X, y) = CreateData(points, classes);
-
-        // Print a small sample of the generated data
-        Console.WriteLine("X (first 10 rows):");
-        Console.WriteLine(X[$":10, :"]);
-
-        Console.WriteLine("\ny (first 10 elements):");
-        Console.WriteLine(y[$":10"]);
-    }
+    // public static void Main(string[] args)
+    // {
+    //     int points = 100;  // Number of points per class
+    //     int classes = 3;   // Number of classes
+    //
+    //     // Generate dataset
+    //     var (X, y) = CreateData(points, classes);
+    //
+    //     // Print a small sample of the generated data
+    //     Console.WriteLine("X (first 10 rows):");
+    //     Console.WriteLine(X[$":10, :"]);
+    //
+    //     Console.WriteLine("\ny (first 10 elements):");
+    //     Console.WriteLine(y[$":10"]);
+    // }
 }
