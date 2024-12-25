@@ -27,9 +27,4 @@ public class LayerDense
     {
         output = np.dot(inputs, weights) + biases;
     }
-
-    public static void Main()
-    {
-        Console.WriteLine(0.10*np.random.randn(4, 3));
-    }
 }
